@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NewsViewController" customModule="iosApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cES-X9-PEU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-Lx-G8t">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some message caption" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyV-i6-87F">
+                                <rect key="frame" x="16" y="439.5" width="382" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR9-2E-7pf">
+                                <rect key="frame" x="156" y="410.5" width="102" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REn-iM-ipD">
+                                <rect key="frame" x="143" y="464.5" width="128.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Message button"/>
+                                <connections>
+                                    <action selector="onMsgButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="HpS-bD-1wO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SyV-i6-87F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4uG-bd-QBC"/>
+                            <constraint firstItem="cES-X9-PEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5BQ-73-fk5"/>
+                            <constraint firstItem="qR9-2E-7pf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CfF-9O-OSo"/>
+                            <constraint firstItem="SyV-i6-87F" firstAttribute="top" secondItem="qR9-2E-7pf" secondAttribute="bottom" constant="8" id="Eh2-Mc-teM"/>
+                            <constraint firstItem="SyV-i6-87F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WGU-3S-5aR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cES-X9-PEU" secondAttribute="trailing" id="ai6-9A-PkL"/>
+                            <constraint firstItem="VPd-Lx-G8t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dBP-Te-mdf"/>
+                            <constraint firstItem="REn-iM-ipD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgz-Uf-tGi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cES-X9-PEU" secondAttribute="bottom" id="eS1-K4-G6j"/>
+                            <constraint firstItem="cES-X9-PEU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nyt-OV-KTi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SyV-i6-87F" secondAttribute="trailing" constant="16" id="oKc-ZJ-Ogo"/>
+                            <constraint firstItem="REn-iM-ipD" firstAttribute="top" secondItem="SyV-i6-87F" secondAttribute="bottom" constant="8" id="pK1-7H-S5N"/>
+                            <constraint firstItem="VPd-Lx-G8t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xTK-bv-LrI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="VPd-Lx-G8t" id="vQl-qW-W9c"/>
+                        <outlet property="msgButton" destination="REn-iM-ipD" id="wmZ-WW-4le"/>
+                        <outlet property="msgCaptionLabel" destination="SyV-i6-87F" id="ORg-Fk-osh"/>
+                        <outlet property="msgTitleLabel" destination="qR9-2E-7pf" id="sam-hL-zwP"/>
+                        <outlet property="tableView" destination="cES-X9-PEU" id="xMT-g8-iCt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

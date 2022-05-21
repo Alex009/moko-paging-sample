@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password_hint">Password</string>
+    <string name="login_hint">Login</string>
+    <string name="login_btn">Login</string>
+    <string name="empty_title">Empty</string>
+    <string name="error_title">Error</string>
+    <string name="no_news_caption">No news at now</string>
+    <string name="refresh_btn">Refresh</string>
+    <string name="retry_btn">Retry</string>
+</resources>
