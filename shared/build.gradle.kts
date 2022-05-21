@@ -43,6 +43,7 @@ kotlin {
                 api("dev.icerock.moko:mvvm-state:0.13.0")
                 api("dev.icerock.moko:resources:0.19.1")
                 api("dev.icerock.moko:units:0.8.0")
+                implementation("dev.icerock.moko:paging:0.7.0")
             }
         }
         val commonTest by getting {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import dev.icerock.moko.mvvm.ResourceState
 import dev.icerock.moko.mvvm.getViewModel
 import dev.icerock.moko.mvvm.utils.bindNotNull
@@ -26,11 +27,37 @@ class MainActivity : AppCompatActivity() {
         with(binding.newsRecyclerView) {
             this.adapter = adapter
             this.layoutManager = LinearLayoutManager(this@MainActivity)
+            bindReachEnd(this, adapter, viewModel)
+        }
+
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.onRefresh {
+                binding.swipeRefresh.isRefreshing = false
+            }
         }
 
         viewModel.state.bindNotNull(this) { state ->
             bindState(binding, adapter, viewModel, state)
         }
+    }
+
+    private fun bindReachEnd(
+        recyclerView: RecyclerView,
+        adapter: UnitsRecyclerViewAdapter,
+        viewModel: NewsViewModel
+    ) {
+        recyclerView.addOnChildAttachStateChangeListener(object :
+            RecyclerView.OnChildAttachStateChangeListener {
+            override fun onChildViewDetachedFromWindow(view: View) = Unit
+
+            override fun onChildViewAttachedToWindow(view: View) {
+                val count = adapter.itemCount
+                val position = recyclerView.getChildAdapterPosition(view)
+                if (position != count - 1) return
+
+                viewModel.onReachEndOfList()
+            }
+        })
     }
 
     private fun bindState(
@@ -87,6 +114,7 @@ class MainActivity : AppCompatActivity() {
     private fun NewsViewModel.UnitItem.toUnit(): UnitItem {
         return when (this) {
             is NewsViewModel.UnitItem.NewsItem -> NewsUnitItem(this)
+            NewsViewModel.UnitItem.LoaderItem -> LoadingUnitItem()
         }
     }
 }

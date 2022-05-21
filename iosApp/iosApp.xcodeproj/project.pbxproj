@@ -17,6 +17,8 @@
 		222359CE2838CD550052C086 /* NewsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222359CD2838CD550052C086 /* NewsTableCell.xib */; };
 		222359D02838CD6B0052C086 /* NewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222359CF2838CD6B0052C086 /* NewsTableCell.swift */; };
 		222359D22838D5F00052C086 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 222359D12838D5F00052C086 /* Localizable.strings */; };
+		222359D5283913640052C086 /* LoaderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222359D3283913640052C086 /* LoaderTableCell.swift */; };
+		222359D6283913640052C086 /* LoaderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222359D4283913640052C086 /* LoaderTableCell.xib */; };
 		22EC640B28278F6000329A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC640A28278F6000329A02 /* AppDelegate.swift */; };
 		22EC640D28278F6000329A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC640C28278F6000329A02 /* SceneDelegate.swift */; };
 		22EC641228278F6000329A02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22EC641028278F6000329A02 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		222359CD2838CD550052C086 /* NewsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableCell.xib; sourceTree = "<group>"; };
 		222359CF2838CD6B0052C086 /* NewsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableCell.swift; sourceTree = "<group>"; };
 		222359D12838D5F00052C086 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		222359D3283913640052C086 /* LoaderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTableCell.swift; sourceTree = "<group>"; };
+		222359D4283913640052C086 /* LoaderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderTableCell.xib; sourceTree = "<group>"; };
 		22EC640828278F6000329A02 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EC640A28278F6000329A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22EC640C28278F6000329A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				222359CD2838CD550052C086 /* NewsTableCell.xib */,
 				222359CF2838CD6B0052C086 /* NewsTableCell.swift */,
 				222359D12838D5F00052C086 /* Localizable.strings */,
+				222359D3283913640052C086 /* LoaderTableCell.swift */,
+				222359D4283913640052C086 /* LoaderTableCell.xib */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 				22EC641728278F6100329A02 /* LaunchScreen.storyboard in Resources */,
 				22EC641428278F6100329A02 /* Assets.xcassets in Resources */,
 				22EC641228278F6000329A02 /* Main.storyboard in Resources */,
+				222359D6283913640052C086 /* LoaderTableCell.xib in Resources */,
 				222359CE2838CD550052C086 /* NewsTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +257,7 @@
 				222359C62838C9170052C086 /* dev_icerock_moko_mvvm-state.swift in Sources */,
 				222359C72838C9170052C086 /* dev_icerock_moko_mvvm-livedata.swift in Sources */,
 				22EC640B28278F6000329A02 /* AppDelegate.swift in Sources */,
+				222359D5283913640052C086 /* LoaderTableCell.swift in Sources */,
 				222359D02838CD6B0052C086 /* NewsTableCell.swift in Sources */,
 				22EC640D28278F6000329A02 /* SceneDelegate.swift in Sources */,
 				222359BE2838C5020052C086 /* NewsViewController.swift in Sources */,

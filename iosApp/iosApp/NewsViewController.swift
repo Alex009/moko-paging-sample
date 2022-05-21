@@ -25,6 +25,11 @@ class NewsViewController: UIViewController {
         viewModel = NewsViewModel().start()
         
         let dataSource = TableUnitsSourceKt.default(for: tableView)
+        tableView.delegate = self
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         
         viewModel.state.addObserver { [weak self] state in
             guard let state = state else { return }
@@ -99,6 +104,11 @@ class NewsViewController: UIViewController {
                 ),
                 itemId: Int64(item.id)
             )
+        case .loaderItem:
+            return UITableViewCellUnit<LoaderTableCell>(
+                data: Void(),
+                itemId: TableUnitItemCompanion.shared.NO_ID
+            )
         }
     }
     
@@ -112,5 +122,26 @@ class NewsViewController: UIViewController {
         case .failed(_): viewModel.onRetryPressed()
         default: return
         }
+    }
+    
+    @objc
+    func onRefresh(refreshControl: UIRefreshControl) {
+        viewModel.onRefresh {
+            refreshControl.endRefreshing()
+        }
+    }
+}
+
+extension NewsViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
+        guard indexPath.row + 1 == tableView.dataSource?.tableView(tableView, numberOfRowsInSection: indexPath.section) else {
+            return
+        }
+        
+        viewModel.onReachEndOfList()
     }
 }

@@ -17,6 +17,11 @@ allprojects {
         google()
         mavenCentral()
     }
+    configurations.configureEach {
+        resolutionStrategy {
+            force("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1-native-mt")
+        }
+    }
 }
 
 tasks.register("clean", Delete::class) {
